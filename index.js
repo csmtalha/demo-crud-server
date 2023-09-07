@@ -10,14 +10,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// app.use(myParser.json());
-// app.use(
-//   myParser.urlencoded({
-//     extended: true,
-//   })
-// );
-// app.use(myParser.json({ limit: '200mb' }));
-// app.use(myParser.urlencoded({ limit: '200mb', extended: true }));
+
 app.use(
   myParser.json({
     limit: '50mb',
@@ -31,8 +24,7 @@ app.use(
     extended: true,
   })
 );
-const ATLAS_URI =
-  'mongodb+srv://demouser:MejKpNxdXgvWjwnL@cluster0.ys8qius.mongodb.net/demo-project?retryWrites=true&w=majority';
+const ATLAS_URI = '';
 mongoose
   .connect(ATLAS_URI)
   .then((result) => console.log('DB connected'))
